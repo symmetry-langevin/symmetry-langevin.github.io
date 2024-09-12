@@ -60,6 +60,9 @@
             <span class="author-block">
               <a href="">Boyang Deng</a><sup>1</sup>,
             </span>
+            <span class="author-block"></span>
+              <a href="">Gordon Wetzstein</a><sup>1</sup>,
+            </span>
             <span class="author-block">
               <a href="">Or Litany</a><sup>2</sup>,
             </span>
@@ -77,7 +80,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="./static/images/saconf24_125.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -116,7 +119,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/teaser2.png" alt="Teaser Image" style="width:100%;">
+      <img src="static/images/saconference24-125-teaser.jpg" alt="Teaser Image" style="width:100%;">
       <h2 class="subtitle has-text-centered">
         In this work, we present a new perspective of understanding symmetries, which leads to the adoption of Riemannian Langevin dynamics to symmetry detection.
       </h2>
@@ -124,7 +127,7 @@
   </div>
 </section>
 
-
+<!-- 
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
@@ -180,7 +183,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -190,17 +193,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-          From natural to artificial objects, geometric structures possessing partial or total symmetries are ubiquitous. Detecting these symmetries is a fundamental and long-standing challenge in geometry processing, as symmetries inform not only the structure but also the semantics, aesthetics, and function of objects.
-          In this work, we bring a novel perspective to this challenge, connecting this classic problem to recent progresses in generative models.
-          </p>
-          In particular, we interpret the problem of detecting symmetry in a transformation space as a mode seeking problem in a score field.
-          This probabilistic formulation allows us to introduce elegant approaches from generative models, such as Langevin dynamics, to symmetry detection.
-          As a score field, the transformation space of a shape is less sensitive to noise than the Euclidean space.
-          Meanwhile, unlike mean-shift clustering used in prior detection methods, Langevin dynamics can robustly discover the modes even when the score field is noisy.
-          Consequently, our solution accurately detects symmetries of different strengths even on noisy shapes,
-          which greatly enriches the applications of symmetry detection.
-          We show that our solution could be applied to a wider range of shapes, evidencing the value of a more robust symmetry detection algorithm in geometry processing.
+          Symmetries are ubiquitous across all kinds of objects, whether in nature or in man-made creations. While these symmetries may seem intuitive to the human eye, detecting them with a machine is nontrivial due to the vast search space. Classical geometry-based methods work by aggregating "votes" for each symmetry but struggle with noise. In contrast, learning-based methods may be more robust to noise, but often overlook partial symmetries due to the scarcity of annotated data. In this work, we address this challenge by proposing a novel symmetry detection method that marries classical symmetry detection techniques with recent advances in generative modeling. Specifically, we apply Langevin dynamics to a redefined symmetry space to enhance robustness against noise. We provide empirical results on a variety of shapes that suggest our method is not only robust to noise, but can also identify both partial and global symmetries. Moreover, we demonstrate the utility of our detected symmetries in various downstream tasks, such as compression and symmetrization of noisy shapes.
         </div>
       </div>
     </div>
@@ -213,11 +206,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{je2024langsym,
+  author    = {Je, Liu and Yang, Deng and Cai, Wetzstein and Litany, Guibas},
+  title     = {Robust Symmetry Detection with Riemannian Langevin Dynamics},
+  journal   = {SIGGRAPH Asia Conference Papers},
+  year      = {2024},
 }</code></pre>
   </div>
 </section>
@@ -227,10 +220,10 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -243,11 +236,8 @@
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            The website is based on <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. We thank the original authors for open-sourcing their code. 
           </p>
         </div>
       </div>

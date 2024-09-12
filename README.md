@@ -1,14 +1,14 @@
-# Nerfies
+# Robust Symmetry Detection with Riemannian Langevin Dynamics
 
 This is the repository that contains source code for the [Riemannian Langevin Dynamics website](https://symmetry-langevin.github.io).
 
 If you find our symmetry detection useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{je2024langsym,
+  author    = {Je, Liu and Yang, Deng and Cai, Wetzstein and Litany, Guibas},
+  title     = {Robust Symmetry Detection with Riemannian Langevin Dynamics},
+  journal   = {SIGGRAPH Asia Conference Papers},
+  year      = {2024},
 }
 ```
 
