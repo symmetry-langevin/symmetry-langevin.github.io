@@ -121,7 +121,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/saconference24-125-teaser.jpg" alt="Teaser Image" style="width:100%;">
+      <img src="./static/images/saconference24-125-teaser.jpg" alt="Teaser Image" style="width:100%;">
       <h2 class="subtitle has-text-centered">
         In this work, we present a new perspective of understanding symmetries, which leads to the adoption of Riemannian Langevin dynamics to symmetry detection.
       </h2>
@@ -208,7 +208,7 @@
           <div class="column is-full">
             <h2 class="title is-3">Method</h2>
             <div class="content has-text-justified">
-              The general idea of symmetry detection is to find a hyper-plane \((\nn, \ii)\) that defines a reflection applicable to a significant part of the shape.
+              The general idea of symmetry detection is to find a hyper-plane \((\textbf{n}, \textbf{p})\) that defines a reflection applicable to a significant part of the shape.
               Mitra et al. [2006] propose a "voting" approach with mean-shift clustering, where they observe that these votes create a density function in the transformation space. 
               The modes of the density function then correspond to significant symmetries since they are a transformation that is proximal to most votes. 
               In other words, symmetry detection can be formulated as a mode seeking procedure of the density defined in the transformation space.
@@ -222,13 +222,13 @@
           <div class="columns is-centered">
             <div class="column is-half">
               <figure class="image is-16by9">
-                <img src="static/images/tspace_const (1).pdf" alt="Symmetry Detection GIF">
+                <img src="./static/images/tspace_const.png" alt="Symmetry Detection GIF">
                 <figcaption style="font-size: 12px; text-align: center;">Transformation space construction. Every transformation for point-pair gets mapped to a point in the symmetry space.</figcaption>
               </figure>
             </div>
             <div class="column is-half">
               <figure class="image is-16by9">
-                <img src="static/images/centroids (4).pdf" alt="Symmetry Detection Image">
+                <img src="./static/images/centroids.png" alt="Symmetry Detection Image">
                 <figcaption style="font-size: 12px; text-align: center;">Geodesic distance to the black point in transformation space. Blue indicates proximity, and red indicates larger distance. Shortest distance can be computed traveling through the origin as well.</figcaption>
               </figure>
             </div>
@@ -253,12 +253,12 @@
           <div class="columns is-centered">
             <div class="column is-half">
               <figure class="image is-16by9">
-                <img src="static/images/traj.gif" alt="Symmetry Detection GIF">
+                <img src="./static/images/traj.gif" alt="Symmetry Detection GIF">
               </figure>
             </div>
             <div class="column is-half">
               <figure class="image is-16by9">
-                <img src="static/images/lang.pdf" alt="Symmetry Detection Image">
+                <img src="./static/images/lang.png" alt="Symmetry Detection Image">
               </figure>
             </div>
           </div>
@@ -282,7 +282,7 @@
               <div class="columns is-centered">
                 <div class="column is-full">
                   <figure class="image is-16by9">
-                    <img src="static/images/qual_r (1).pdf" alt="Symmetry Detection GIF">
+                    <img src="./static/images/qual_r.png" alt="Symmetry Detection GIF">
                     <figcaption style="font-size: 12px; text-align: center;">Qualitative results for 3D.
                       We visualize the input 3D shape and selected reflective planes from our detection results. We only highlight the largest connected region that agree to the symmetry, and color each side of the reflective plane differently. Results indicate that our method is capable of detecting symmetries of varying scales on a wide array of shapes.</figcaption>
                   </figure>
