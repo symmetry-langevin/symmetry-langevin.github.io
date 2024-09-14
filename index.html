@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <meta charset="utf-8">
   <meta name="description"
         content="we bring a novel perspective to this challenge, connecting this classic problem to recent progresses in generative models.">
@@ -53,7 +55,7 @@
             <span class="author-block">
               <a href="">Jihyeon Je</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="">Jack Liu</a><sup>1</sup>,</span>
+              <a href="">Jiayi Liu</a><sup>1</sup>,</span>
             <span class="author-block">
               <a href="">Guandao Yang</a><sup>1</sup>,
             </span>
@@ -198,10 +200,95 @@
       </div>
     </div>
     <!--/ Abstract. -->
+    <hr>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3">Method</h2>
+            <div class="content has-text-justified">
+              The general idea of symmetry detection is to find a hyper-plane \((\nn, \ii)\) that defines a reflection applicable to a significant part of the shape.
+              Mitra et al. [2006] propose a "voting" approach with mean-shift clustering, where they observe that these votes create a density function in the transformation space. 
+              The modes of the density function then correspond to significant symmetries since they are a transformation that is proximal to most votes. 
+              In other words, symmetry detection can be formulated as a mode seeking procedure of the density defined in the transformation space.
+              As robust mode seeking algorithms are well-studied in generative modeling, we introduce one, specifically Langevin dynamics, to symmetry detection.
+              We establish a connection between Langevin dynamics and mean-shift algorithm used in symmetry detection and show that the introduction of Langevin dynamics help improve robustness to noise while allowing us to detect both partial and global symmetries. 
+               </div>
+          </div>
+        </div>
+
+        <figure>
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <figure class="image is-16by9">
+                <img src="static/images/tspace_const (1).pdf" alt="Symmetry Detection GIF">
+                <figcaption style="font-size: 12px; text-align: center;">Transformation space construction. Every transformation for point-pair gets mapped to a point in the symmetry space.</figcaption>
+              </figure>
+            </div>
+            <div class="column is-half">
+              <figure class="image is-16by9">
+                <img src="static/images/centroids (4).pdf" alt="Symmetry Detection Image">
+                <figcaption style="font-size: 12px; text-align: center;">Geodesic distance to the black point in transformation space. Blue indicates proximity, and red indicates larger distance. Shortest distance can be computed traveling through the origin as well.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </figure>
+
+        <section class="section">
+          <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-full">
+                <div class="content has-text-justified">
+                  One challenge of performing the walk in the transformation space defined as \(T(\pp,\qq)\) is that Euclidean distance in the space does not reflect the actual distance between symmetry plane.
+                  This is due to the fact that reflective symmetry contains \(SO(n)\) rotation symmetry.
+                  Fortunately, the score function can be computed in a Riemannian manifold where only distances are defined. 
+                  In addition, we redefine a reflective symmetry manifold to directly walk on, derived from Hough-transform representation of hyperplanes. We hypothesize that the combined effects of such a transformation representation with the introduction Langevin dynamics improve robustness to noise.</div>
+              </div>
+            </div>
 
 
-
-
+        <figure>
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <figure class="image is-16by9">
+                <img src="static/images/traj.gif" alt="Symmetry Detection GIF">
+              </figure>
+            </div>
+            <div class="column is-half">
+              <figure class="image is-16by9">
+                <img src="static/images/lang.pdf" alt="Symmetry Detection Image">
+              </figure>
+            </div>
+          </div>
+          <figcaption style="font-size: 12px; text-align: center;">Visualizing Langevin dynamics trajectory. For each converged mode, we show the full trajectory (top row), as well as the corresponding symmetry in the shape space (bottom row). Note that due to our Langevin construction, we directly jump across the invalid region as opposed to stepping within it. When converged modes are near the boundary of the invalid region \((l \approx k)\), we see oscillations through the origin as the two modes are equivalent (\(H(0, \textbf{n}) = H(0, -\textbf{n}))\).</figcaption>
+        </figure>
+        <!--/ Abstract. -->
+    
+        <section class="section">
+          <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-full">
+                <h2 class="title is-3">Results</h2>
+                <div class="content has-text-justified">
+                  Below, we provide empirical results on a variety of shapes that suggest our method is not only robust to noise, but can also identify both partial and global symmetries. 
+                  Please see our full paper for more results and applications.
+                   </div>
+              </div>
+            </div>
+            <figure>
+              <div class="columns is-centered">
+                <div class="column is-full">
+                  <figure class="image is-16by9">
+                    <img src="static/images/qual_r (1).pdf" alt="Symmetry Detection GIF">
+                    <figcaption style="font-size: 12px; text-align: center;">Qualitative results for 3D.
+                      We visualize the input 3D shape and selected reflective planes from our detection results. We only highlight the largest connected region that agree to the symmetry, and color each side of the reflective plane differently. Results indicate that our method is capable of detecting symmetries of varying scales on a wide array of shapes.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </figure>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
